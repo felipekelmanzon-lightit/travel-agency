@@ -6,23 +6,20 @@ namespace Lightit\Backoffice\Airlines\Domain\Actions;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 use Lightit\Backoffice\Airlines\Domain\Models\Airline;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class ListAirlinesAction
 {
     /**
-     * Execute the action to list airlines with optional filtering by active flights.
-     *
-     * @param int|null $activeFlights The number of active flights to filter by.
-     *
-     * @return LengthAwarePaginator <Airline>
+     * @return LengthAwarePaginator<Airline>
      */
-    public function execute(int|null $activeFlights = null): LengthAwarePaginator
+    public function execute(): LengthAwarePaginator
     {
-        $query = Airline::query();
-        if ($activeFlights !== null) {
-            $query->where('number_of_flights', $activeFlights);
-        }
+        /** @var LengthAwarePaginator<Airline> $paginator */
+        $paginator = QueryBuilder::for(Airline::class)
+            ->allowedFilters(['active_flights'])
+            ->paginate(10);
 
-        return $query->paginate(10);
+        return $paginator;
     }
 }
