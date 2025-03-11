@@ -13,8 +13,6 @@ class UpdateCityAction
     {
         $city->update([
             'name' => $cityDto->getName(),
-            'incoming_flights' => $cityDto->getIncomingFlights(),
-            'outgoing_flights' => $cityDto->getOutgoingFlights(),
         ]);
 
         return $city;

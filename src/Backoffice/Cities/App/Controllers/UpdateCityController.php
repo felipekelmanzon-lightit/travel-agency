@@ -17,11 +17,7 @@ class UpdateCityController
         $updatedCity = $action->execute($request->toDto(), $city);
 
         return responder()
-            ->success([
-                'message' => 'City updated',
-                'data' => $updatedCity,
-                CityTransformer::class,
-            ])
+            ->success($updatedCity, CityTransformer::class)
             ->respond();
     }
 }

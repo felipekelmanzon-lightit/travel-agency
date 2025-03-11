@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int                             $id
  * @property string                          $name
- * @property int                             $incoming_flights
- * @property int                             $outgoing_flights
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  *
@@ -30,7 +28,5 @@ class City extends Model
 {
     protected $fillable = [
         'name',
-        'incoming_flights',
-        'outgoing_flights',
     ];
 }

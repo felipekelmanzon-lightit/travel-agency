@@ -16,10 +16,7 @@ class DeleteCityController
         $action->execute($city);
 
         return responder()
-            ->success([
-                'message' => 'City deleted',
-                CityTransformer::class,
-            ])
+            ->success(CityTransformer::class)
             ->respond();
     }
 }

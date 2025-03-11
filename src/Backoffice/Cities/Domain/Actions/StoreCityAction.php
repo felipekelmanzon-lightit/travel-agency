@@ -13,8 +13,6 @@ class StoreCityAction
     {
         return new City([
             'name' => $cityDto->getName(),
-            'incoming_flights' => $cityDto->getIncomingFlights(),
-            'outgoing_flights' => $cityDto->getOutgoingFlights(),
         ]);
     }
 }
