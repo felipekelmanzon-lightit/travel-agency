@@ -16,11 +16,7 @@ class StoreCityController
         $city = $action->execute($request->toDto());
 
         return responder()
-            ->success([
-                'message' => 'City created',
-                'data' => $city,
-                CityTransformer::class,
-            ])
-            ->respond();
+            ->success($city, CityTransformer::class)
+            ->respond(JsonResponse::HTTP_CREATED);
     }
 }

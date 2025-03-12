@@ -11,10 +11,12 @@ class StoreCityAction
 {
     public function execute(CityDto $cityDto): City
     {
-        return new City([
+        $city = new City([
             'name' => $cityDto->getName(),
-            'incoming_flights' => $cityDto->getIncomingFlights(),
-            'outgoing_flights' => $cityDto->getOutgoingFlights(),
         ]);
+
+        $city->save();
+
+        return $city;
     }
 }

@@ -13,8 +13,6 @@ class StoreCityRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'incoming_flights' => 'required|integer',
-            'outgoing_flights' => 'required|integer',
         ];
     }
 
@@ -22,8 +20,6 @@ class StoreCityRequest extends FormRequest
     {
         return new CityDto(
             name: $this->string('name')->toString(),
-            incomingFlights: $this->string('incoming_flights')->toString(),
-            outgoingFlights: $this->string('outgoing_flights')->toString(),
         );
     }
 }

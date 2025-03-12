@@ -11,8 +11,6 @@ use Lightit\Backoffice\Airlines\Domain\Models\Airline;
 /**
  * @property int                             $id
  * @property string                          $name
- * @property int                             $incoming_flights
- * @property int                             $outgoing_flights
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  *
@@ -21,13 +19,8 @@ use Lightit\Backoffice\Airlines\Domain\Models\Airline;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|City query()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereIncomingFlights($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereOutgoingFlights($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereUpdatedAt($value)
- *
- * @property-read \Illuminate\Database\Eloquent\Collection<int, Airline> $airlines
- * @property-read int|null $airlines_count
  *
  * @mixin \Eloquent
  */
@@ -35,8 +28,6 @@ class City extends Model
 {
     protected $fillable = [
         'name',
-        'incoming_flights',
-        'outgoing_flights',
     ];
 
     /**

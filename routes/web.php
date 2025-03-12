@@ -1,8 +1,5 @@
 <?php
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Cookie\CookieJar;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Lightit\Shared\App\Exceptions\InvalidActionException;
 use Lightit\Backoffice\Cities\App\Controllers\ListCitiesController;
@@ -29,6 +26,7 @@ Route::prefix('airlines')
         Route::put('/{airline}', UpdateAirlineController::class);
         Route::delete('/{airline}', DeleteAirlineController::class);
     });
+
 
 Route::get('invalid', static fn() => throw new InvalidActionException("Is not valid"));
 

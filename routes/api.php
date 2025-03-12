@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use Lightit\Backoffice\Users\App\Controllers\{
     DeleteUserController, GetUserController, ListUserController, StoreUserController
 };
+use Lightit\Backoffice\Cities\App\Controllers\{
+    DeleteCityController, ListCitiesController, StoreCityController, UpdateCityController
+};
 
 
 /*
@@ -34,4 +37,12 @@ Route::prefix('users')
         Route::get('/{user}', GetUserController::class)->withTrashed();
         Route::post('/', StoreUserController::class);
         Route::delete('/{user}', DeleteUserController::class);
+    });
+
+Route::prefix('cities')
+    ->group(static function () {
+        Route::get('/', ListCitiesController::class);
+        Route::post('/', StoreCityController::class);
+        Route::put('/{city}', UpdateCityController::class);
+        Route::delete('/{city}', DeleteCityController::class);
     });
