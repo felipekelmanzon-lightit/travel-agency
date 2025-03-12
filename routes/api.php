@@ -8,7 +8,9 @@ use Lightit\Backoffice\Users\App\Controllers\{
 use Lightit\Backoffice\Cities\App\Controllers\{
     DeleteCityController, ListCitiesController, StoreCityController, UpdateCityController
 };
-
+use Lightit\Backoffice\Airlines\App\Controllers\{
+    DeleteAirlineController, ListAirlinesController, StoreAirlineController, UpdateAirlineController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +48,12 @@ Route::prefix('cities')
         Route::put('/{city}', UpdateCityController::class);
         Route::delete('/{city}', DeleteCityController::class);
     });
+
+Route::prefix('airlines')
+    ->group(static function () {
+        Route::get('/', ListAirlinesController::class);
+        Route::post('/', StoreAirlineController::class);
+        Route::put('/{airline}', UpdateAirlineController::class);
+        Route::delete('/{airline}', DeleteAirlineController::class);
+    });
+
