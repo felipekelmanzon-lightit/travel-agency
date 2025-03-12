@@ -17,9 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|City query()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereIncomingFlights($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereOutgoingFlights($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|City whereUpdatedAt($value)
  *
  * @mixin \Eloquent

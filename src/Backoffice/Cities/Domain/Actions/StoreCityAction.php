@@ -11,8 +11,12 @@ class StoreCityAction
 {
     public function execute(CityDto $cityDto): City
     {
-        return new City([
+        $city = new City([
             'name' => $cityDto->getName(),
         ]);
+
+        $city->save();
+
+        return $city;
     }
 }
