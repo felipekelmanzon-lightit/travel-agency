@@ -11,10 +11,14 @@ class StoreAirlineAction
 {
     public function execute(AirlineDto $airlineDto): Airline
     {
-        return new Airline([
+        $airline = new Airline([
             'name' => $airlineDto->getName(),
             'description' => $airlineDto->getDescription(),
             'number_of_flights' => $airlineDto->getNumberOfFlights(),
         ]);
+
+        $airline->save();
+
+        return $airline;
     }
 }

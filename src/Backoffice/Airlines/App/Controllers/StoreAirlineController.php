@@ -18,6 +18,6 @@ class StoreAirlineController
 
         return responder()
             ->success($airline, AirlineTransformer::class)
-            ->respond();
+            ->respond(JsonResponse::HTTP_CREATED);
     }
 }
