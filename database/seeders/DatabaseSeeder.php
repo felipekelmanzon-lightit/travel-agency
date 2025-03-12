@@ -17,9 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         UserFactory::new()->count(10)->create();
 
-        // UserFactory::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(CitySeeder::class);
+
     }
 }
