@@ -24,7 +24,6 @@ use Lightit\Backoffice\Flights\Domain\Models\Flight;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Airline whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Airline whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Airline whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Airline whereNumberOfFlights($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Airline whereUpdatedAt($value)
  *
  * @property-read \Illuminate\Database\Eloquent\Collection<int, City> $cities
