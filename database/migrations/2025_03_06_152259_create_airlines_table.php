@@ -13,8 +13,7 @@ return new class extends Migration
         Schema::create('airlines', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->integer('number_of_flights')->default(0);
+            $table->text('description');
             $table->timestamps();
         });
     }

@@ -14,7 +14,6 @@ class StoreAirlineAction
         $airline = new Airline([
             'name' => $airlineDto->getName(),
             'description' => $airlineDto->getDescription(),
-            'number_of_flights' => $airlineDto->getNumberOfFlights(),
         ]);
 
         $airline->save();
