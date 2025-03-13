@@ -14,7 +14,6 @@ class StoreAirlineRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'number_of_flights' => 'required|integer',
         ];
     }
 
@@ -23,7 +22,6 @@ class StoreAirlineRequest extends FormRequest
         return new AirlineDto(
             name: $this->string('name')->toString(),
             description: $this->string('description')->toString(),
-            number_of_flights: $this->integer('number_of_flights'),
         );
     }
 }

@@ -14,7 +14,6 @@ use Lightit\Backoffice\Flights\Domain\Models\Flight;
  * @property int                             $id
  * @property string                          $name
  * @property string                          $description
- * @property int                             $number_of_flights
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  *
@@ -38,7 +37,6 @@ class Airline extends Model
     protected $fillable = [
         'name',
         'description',
-        'number_of_flights',
     ];
 
     /**

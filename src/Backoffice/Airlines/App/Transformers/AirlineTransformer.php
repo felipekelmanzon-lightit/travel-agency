@@ -10,7 +10,7 @@ use Lightit\Backoffice\Airlines\Domain\Models\Airline;
 class AirlineTransformer extends Transformer
 {
     /**
-     * @return array{id: int, name: string, description: string, number_of_flights: int}
+     * @return array{id: int, name: string, description: string}
      */
     public function transform(Airline $airline): array
     {
@@ -18,7 +18,6 @@ class AirlineTransformer extends Transformer
             'id' => $airline->id,
             'name' => $airline->name,
             'description' => $airline->description,
-            'number_of_flights' => $airline->number_of_flights,
         ];
     }
 }

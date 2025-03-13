@@ -14,7 +14,6 @@ class UpdateAirlineAction
         $airline->update([
             'name' => $airlineDto->getName(),
             'description' => $airlineDto->getDescription(),
-            'number_of_flights' => $airlineDto->getNumberOfFlights(),
         ]);
 
         return $airline;

@@ -13,10 +13,10 @@ class ListAirlinesController
 {
     public function __invoke(ListAirlinesAction $action, ListAirlinesRequest $request): JsonResponse
     {
-        $airline = $action->execute($request->toDto());
+        $airlines = $action->execute($request->toDto());
         
         return responder()
-            ->success($airline, AirlineTransformer::class)
-            ->respond(JsonResponse::HTTP_OK);
+            ->success($airlines, AirlineTransformer::class)
+            ->respond();
     }
 }

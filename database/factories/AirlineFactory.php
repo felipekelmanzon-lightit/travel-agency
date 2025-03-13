@@ -19,7 +19,6 @@ class AirlineFactory extends Factory
         return [
             'name' => $this->faker->company,
             'description' => $this->faker->sentence,
-            'number_of_flights' => $this->faker->numberBetween(1, 100),
         ];
     }
 }
