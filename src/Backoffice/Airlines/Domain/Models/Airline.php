@@ -28,6 +28,8 @@ use Lightit\Backoffice\Flights\Domain\Models\Flight;
  *
  * @property-read \Illuminate\Database\Eloquent\Collection<int, City> $cities
  * @property-read int|null $cities_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Flight> $flights
+ * @property-read int|null $flights_count
  *
  * @mixin \Eloquent
  */
