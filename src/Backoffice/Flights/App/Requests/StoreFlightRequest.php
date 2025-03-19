@@ -13,22 +13,22 @@ class StoreFlightRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'airline_id' => 'required|integer|exists:airlines,id',
-            'origin_city_id' => 'required|integer|exists:cities,id',
-            'destination_city_id' => 'required|integer|exists:cities,id',
-            'departure_datetime' => 'required|date',
-            'arrival_datetime' => 'required|date|after:departure_datetime',
+            'airlineId' => 'required|integer|exists:airlines,id',
+            'originCityId' => 'required|integer|exists:cities,id',
+            'destinationCityId' => 'required|integer|exists:cities,id|different:originCityId',
+            'departureDatetime' => 'required|date',
+            'arrivalDatetime' => 'required|date|after:departureDatetime',
         ];
     }
 
     public function toDto(): FlightDto
     {
         return new FlightDto(
-            airlineId: $this->integer('airline_id'),
-            originCityId: $this->integer('origin_city_id'),
-            destinationCityId: $this->integer('destination_city_id'),
-            departureDate: Carbon::parse($this->string('departure_datetime')->toString()),
-            arrivalDate: Carbon::parse($this->string('arrival_datetime')->toString()),
+            airlineId: $this->integer('airlineId'),
+            originCityId: $this->integer('originCityId'),
+            destinationCityId: $this->integer('destinationCityId'),
+            departureDate: Carbon::parse($this->string('departureDatetime')->toString()),
+            arrivalDate: Carbon::parse($this->string('arrivalDatetime')->toString()),
         );
     }
 }

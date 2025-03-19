@@ -11,17 +11,17 @@ use Lightit\Backoffice\Flights\Domain\Models\Flight;
 class FlightTransformer extends Transformer
 {
     /**
-     * @return array{id: int, airline_id: int, origin_city_id: int, destination_city_id: int, departure_datetime: Carbon, arrival_datetime: Carbon}
+     * @return array{id: int, airlineId: int, originCityId: int, destinationCityId: int, departureDatetime: Carbon, arrivalDatetime: Carbon}
      */
     public function transform(Flight $flight): array
     {
         return [
             'id' => $flight->id,
-            'airline_id' => $flight->airline_id,
-            'origin_city_id' => $flight->origin_city_id,
-            'destination_city_id' => $flight->destination_city_id,
-            'departure_datetime' => $flight->departure_datetime,
-            'arrival_datetime' => $flight->arrival_datetime,
+            'airlineId' => $flight->airline_id,
+            'originCityId' => $flight->origin_city_id,
+            'destinationCityId' => $flight->destination_city_id,
+            'departureDatetime' => $flight->departure_datetime,
+            'arrivalDatetime' => $flight->arrival_datetime,
         ];
     }
 }
