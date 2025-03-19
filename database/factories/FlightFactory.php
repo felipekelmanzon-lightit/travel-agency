@@ -29,11 +29,8 @@ class FlightFactory extends Factory
                                 ->where('id', '!=', $originCity->id)
                                 ->inRandomOrder()
                                 ->first() ?? (new CityFactory())->create();
-        $departure = Carbon::now()->addDays(fake()->numberBetween(1, 30))
-                                  ->addHours(fake()->numberBetween(1, 23))
-                                  ->addMinutes(fake()->numberBetween(1, 59));
-        $arrival = (clone $departure)->addHours(fake()->numberBetween(1, 15))
-                                     ->addMinutes(fake()->numberBetween(1, 59));
+        $departure = Carbon::parse(fake()->dateTimeBetween('now', '+1 year'));
+        $arrival = $departure->copy()->addHours(fake()->numberBetween(1, 15));
 
         return [
             'airline_id' => $airlineId,
